@@ -213,6 +213,8 @@ class GroupsRequestBuilder(BaseRequestBuilder):
                 return "%24select"
             if original_name == "skip":
                 return "%24skip"
+            if original_name == "skiptoken":
+                return "%24skiptoken"
             if original_name == "top":
                 return "%24top"
             return original_name
@@ -240,6 +242,9 @@ class GroupsRequestBuilder(BaseRequestBuilder):
 
         # Show only the first n items
         top: Optional[int] = None
+
+        # Skip token
+        skiptoken: Optional[str] = None
 
     
     from kiota_abstractions.base_request_configuration import BaseRequestConfiguration
